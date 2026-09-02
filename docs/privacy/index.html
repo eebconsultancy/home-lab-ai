@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Home Lab AI</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 680px; margin: 0 auto; padding: 48px 24px 64px; line-height: 1.65; color: #1c1c1e; background: #faf7f2; }
+  a { color: #b5622c; }
+  h1 { font-size: 1.6rem; margin-bottom: 4px; }
+  p.tagline { color: #6b6b6f; margin-top: 0; }
+  p.updated { color: #6b6b6f; font-size: 0.9rem; }
+  h2 { font-size: 1.15rem; margin-top: 2.5rem; border-top: 1px solid #ece7de; padding-top: 1.5rem; }
+  h3 { font-size: 1rem; margin-top: 1.5rem; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.92rem; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #ece7de; vertical-align: top; }
+  th { color: #6b6b6f; font-weight: 600; }
+  ul { padding-left: 1.2rem; }
+  footer { margin-top: 48px; color: #9a9a9e; font-size: 0.85rem; }
+  .back { display: inline-block; margin-bottom: 24px; font-size: 0.9rem; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #17140f; color: #f2ede4; }
+    a { color: #e59a5f; }
+    h2 { border-color: #332c20; }
+    th, td { border-color: #332c20; }
+    footer { color: #7a756c; }
+  }
+</style>
+</head>
+<body>
+  <a class="back" href="../">&larr; Home Lab AI</a>
+  <h1>Privacy Policy</h1>
+  <p class="tagline">Home Lab AI, by EEB CONSULTANCY LLC</p>
+  <p class="updated">Last updated: September 2, 2026</p>
+
+  <p>This policy describes what happens to your data when you use the Home Lab AI iOS app ("Home Lab AI", "the app"). It is written to match how the app and its backend actually work, not a generic template.</p>
+
+  <h2>1. Room photos</h2>
+  <p>When you select or capture a photo of a room, the app sends that photo to our backend (a Cloudflare Worker) so it can be forwarded to Google's Gemini API for AI redesign.</p>
+  <ul>
+    <li>Your photo is processed to generate a redesigned image and is <strong>not stored by our backend after processing</strong> — the backend does not retain a copy of your photo once the response is returned.</li>
+    <li>Your original photo, and any design history you choose to keep, are stored <strong>locally on your device only</strong>. We do not maintain a server-side copy or backup of your photo library or design history.</li>
+    <li>Deleting the app, or deleting an entry from your in-app history, removes that content from your device; we have no server-side copy to separately delete.</li>
+  </ul>
+
+  <h2>2. AI-generated images</h2>
+  <p>The redesigned image returned by the AI is sent back to your device. It is only saved if you choose to keep it in your in-app design history or export it (e.g. via the Photos app); otherwise it is discarded like any other in-memory app content.</p>
+
+  <h2>3. Analytics</h2>
+  <p>We use Amplitude for anonymous, aggregate product analytics — for example, which screens are used and whether a design was generated — so we can understand and improve the app. Specifically:</p>
+  <ul>
+    <li>We do <strong>not</strong> request App Tracking Transparency (ATT) permission, and we do not collect Apple's advertising identifier (IDFA).</li>
+    <li>We do <strong>not</strong> use Amplitude Session Replay or any screen-recording analytics.</li>
+    <li>We do <strong>not</strong> configure collection of your IP-derived city, carrier, or Apple's vendor identifier (IDFV) as part of analytics events.</li>
+    <li>Analytics events are tied to an anonymous, installation-level identifier, not to your name, email, or Apple ID.</li>
+  </ul>
+
+  <h2>4. Backend, abuse prevention &amp; fair use</h2>
+  <p>Our backend (a Cloudflare Worker) forwards generation requests to Google's Gemini API and enforces basic abuse and cost protection so the service stays usable and sustainable for everyone:</p>
+  <ul>
+    <li>Requests are attested using Apple's DeviceCheck, which lets our backend distinguish genuine app instances from arbitrary third-party callers. Apple's DeviceCheck token generation does not identify you personally.</li>
+    <li>To rate-limit and apply fair-use limits, the backend records a <strong>salted, hashed</strong> identifier derived from request/network information — never your raw IP address or a directly identifying value — together with a request count.</li>
+    <li>These rate-limit and fair-use records are kept only long enough to enforce the relevant time window (minutes to a bounded number of days) and then automatically expire; they are not retained indefinitely.</li>
+  </ul>
+
+  <h2>5. Purchases</h2>
+  <p>Home Lab AI Premium subscriptions are sold and billed entirely through Apple's StoreKit / the App Store. We never see, collect, or store your payment card details — Apple handles the transaction, and our app only receives confirmation of your subscription status.</p>
+
+  <h2>6. What we do not do</h2>
+  <ul>
+    <li>We do not sell your personal data.</li>
+    <li>We do not run ads or ad-tracking in the app.</li>
+    <li>We do not access your location.</li>
+    <li>We do not have a social network, chat, or public user-content feature.</li>
+    <li>We do not permanently store your room photos on our servers.</li>
+  </ul>
+
+  <h2>7. Third parties we use</h2>
+  <table>
+    <tr><th>Service</th><th>Purpose</th></tr>
+    <tr><td>Google Gemini API</td><td>Generates the AI room redesign, called from our backend, not directly from your device.</td></tr>
+    <tr><td>Cloudflare Workers / KV</td><td>Hosts our backend and stores short-lived, hashed rate-limit/fair-use counters.</td></tr>
+    <tr><td>Amplitude</td><td>Anonymous, aggregate product analytics as described in Section 3.</td></tr>
+    <tr><td>Apple StoreKit</td><td>Processes all subscription purchases and billing.</td></tr>
+    <tr><td>Apple DeviceCheck</td><td>Lightweight, non-identifying request attestation for abuse prevention.</td></tr>
+  </table>
+
+  <h2>8. Children's privacy</h2>
+  <p>Home Lab AI is not directed at children and we do not knowingly collect personal data from children.</p>
+
+  <h2>9. Changes to this policy</h2>
+  <p>If how we handle data changes in a material way, we will update this page and change the "Last updated" date above.</p>
+
+  <h2>10. Contact us</h2>
+  <p>Questions about this policy: <a href="mailto:info@eebconsultancyllc.com">info@eebconsultancyllc.com</a>. See also our <a href="../support/">Support page</a>.</p>
+
+  <footer>&copy; 2026 EEB CONSULTANCY LLC</footer>
+</body>
+</html>
+
