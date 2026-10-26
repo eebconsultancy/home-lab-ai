@@ -1,9 +1,11 @@
+```html
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy — Home Lab AI</title>
+<meta name="description" content="Privacy Policy for Home Lab AI by EEB Consultancy LLC, including Personal and Professional Mode.">
 <style>
   :root { color-scheme: light dark; }
   body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 680px; margin: 0 auto; padding: 48px 24px 64px; line-height: 1.65; color: #1c1c1e; background: #faf7f2; }
@@ -29,73 +31,577 @@
 </style>
 </head>
 <body>
-  <a class="back" href="../">&larr; Home Lab AI</a>
-  <h1>Privacy Policy</h1>
-  <p class="tagline">Home Lab AI, by EEB CONSULTANCY LLC</p>
-  <p class="updated">Last updated: September 2, 2026</p>
 
-  <p>This policy describes what happens to your data when you use the Home Lab AI iOS app ("Home Lab AI", "the app"). It is written to match how the app and its backend actually work, not a generic template.</p>
+<a class="back" href="../">&larr; Home Lab AI</a>
 
-  <h2>1. Room photos</h2>
-  <p>When you select or capture a photo of a room, the app sends that photo to our backend (a Cloudflare Worker) so it can be forwarded to Google's Gemini API for AI redesign.</p>
-  <ul>
-    <li>Your photo is processed to generate a redesigned image and is <strong>not stored by our backend after processing</strong> — the backend does not retain a copy of your photo once the response is returned.</li>
-    <li>Your original photo, and any design history you choose to keep, are stored <strong>locally on your device only</strong>. We do not maintain a server-side copy or backup of your photo library or design history.</li>
-    <li>Deleting the app, or deleting an entry from your in-app history, removes that content from your device; we have no server-side copy to separately delete.</li>
-  </ul>
+<h1>Privacy Policy</h1>
+<p class="tagline">Home Lab AI, by EEB CONSULTANCY LLC</p>
+<p class="updated">Last updated: October 26, 2026</p>
 
-  <h2>2. AI-generated images</h2>
-  <p>The redesigned image returned by the AI is sent back to your device. It is only saved if you choose to keep it in your in-app design history or export it (e.g. via the Photos app); otherwise it is discarded like any other in-memory app content.</p>
+<p>
+This Privacy Policy explains how EEB CONSULTANCY LLC
+("we", "us", or "our") processes information when you use
+the Home Lab AI iOS application ("Home Lab AI" or "the app").
+</p>
 
-  <h2>3. Analytics</h2>
-  <p>We use Amplitude for anonymous, aggregate product analytics — for example, which screens are used and whether a design was generated — so we can understand and improve the app. Specifically:</p>
-  <ul>
-    <li>We do <strong>not</strong> request App Tracking Transparency (ATT) permission, and we do not collect Apple's advertising identifier (IDFA).</li>
-    <li>We do <strong>not</strong> use Amplitude Session Replay or any screen-recording analytics.</li>
-    <li>We do <strong>not</strong> configure collection of your IP-derived city, carrier, or Apple's vendor identifier (IDFV) as part of analytics events.</li>
-    <li>Analytics events are tied to an anonymous, installation-level identifier, not to your name, email, or Apple ID.</li>
-  </ul>
+<p>
+Home Lab AI provides two experiences: Personal Mode and
+Professional Mode. These modes have different account,
+storage, and data-processing requirements.
+</p>
 
-  <h2>4. Backend, abuse prevention &amp; fair use</h2>
-  <p>Our backend (a Cloudflare Worker) forwards generation requests to Google's Gemini API and enforces basic abuse and cost protection so the service stays usable and sustainable for everyone:</p>
-  <ul>
-    <li>Requests are attested using Apple's DeviceCheck, which lets our backend distinguish genuine app instances from arbitrary third-party callers. Apple's DeviceCheck token generation does not identify you personally.</li>
-    <li>To rate-limit and apply fair-use limits, the backend records a <strong>salted, hashed</strong> identifier derived from request/network information — never your raw IP address or a directly identifying value — together with a request count.</li>
-    <li>These rate-limit and fair-use records are kept only long enough to enforce the relevant time window (minutes to a bounded number of days) and then automatically expire; they are not retained indefinitely.</li>
-  </ul>
+<h2>1. Information we process</h2>
 
-  <h2>5. Purchases</h2>
-  <p>Home Lab AI Premium subscriptions are sold and billed entirely through Apple's StoreKit / the App Store. We never see, collect, or store your payment card details — Apple handles the transaction, and our app only receives confirmation of your subscription status.</p>
+<p>
+Depending on the features you use, Home Lab AI may process:
+</p>
 
-  <h2>6. What we do not do</h2>
-  <ul>
-    <li>We do not sell your personal data.</li>
-    <li>We do not run ads or ad-tracking in the app.</li>
-    <li>We do not access your location.</li>
-    <li>We do not have a social network, chat, or public user-content feature.</li>
-    <li>We do not permanently store your room photos on our servers.</li>
-  </ul>
+<ul>
+  <li>Room photographs selected or captured by you.</li>
+  <li>AI design instructions, staging briefs, and preferences.</li>
+  <li>AI-generated and refined images.</li>
+  <li>Property names, room information, and project metadata.</li>
+  <li>Professional account identifiers and authentication information.</li>
+  <li>Purchase status, Credit balances, and transaction records.</li>
+  <li>Technical information needed for security, diagnostics, and abuse prevention.</li>
+  <li>Product analytics information, as described below.</li>
+</ul>
 
-  <h2>7. Third parties we use</h2>
-  <table>
-    <tr><th>Service</th><th>Purpose</th></tr>
-    <tr><td>Google Gemini API</td><td>Generates the AI room redesign, called from our backend, not directly from your device.</td></tr>
-    <tr><td>Cloudflare Workers / KV</td><td>Hosts our backend and stores short-lived, hashed rate-limit/fair-use counters.</td></tr>
-    <tr><td>Amplitude</td><td>Anonymous, aggregate product analytics as described in Section 3.</td></tr>
-    <tr><td>Apple StoreKit</td><td>Processes all subscription purchases and billing.</td></tr>
-    <tr><td>Apple DeviceCheck</td><td>Lightweight, non-identifying request attestation for abuse prevention.</td></tr>
-  </table>
+<p>
+We process this information to provide the features you
+request, maintain the service, protect accounts, and
+prevent misuse.
+</p>
 
-  <h2>8. Children's privacy</h2>
-  <p>Home Lab AI is not directed at children and we do not knowingly collect personal data from children.</p>
+<h2>2. Personal Mode</h2>
 
-  <h2>9. Changes to this policy</h2>
-  <p>If how we handle data changes in a material way, we will update this page and change the "Last updated" date above.</p>
+<h3>2.1 Room photos</h3>
 
-  <h2>10. Contact us</h2>
-  <p>Questions about this policy: <a href="mailto:info@eebconsultancyllc.com">info@eebconsultancyllc.com</a>. See also our <a href="../support/">Support page</a>.</p>
+<p>
+When you select or capture a room photograph in Personal
+Mode, the app sends the image to our Cloudflare backend
+for processing through Google's Gemini API.
+</p>
 
-  <footer>&copy; 2026 EEB CONSULTANCY LLC</footer>
+<p>
+Personal Mode follows a local-first storage approach.
+Original room photos and design history that you choose
+to keep are stored locally on your device.
+</p>
+
+<p>
+Our Personal Mode backend processes submitted photographs
+for the requested AI operation and does not maintain a
+permanent server-side photo library or design-history
+backup.
+</p>
+
+<p>
+Deleting locally stored content removes the corresponding
+app-managed local copy. Copies exported to other apps,
+saved to Photos, or included in device backups are managed
+separately.
+</p>
+
+<h3>2.2 AI-generated images</h3>
+
+<p>
+Generated images are returned to your device. You may
+save them in your design history or export them using
+supported iOS features.
+</p>
+
+<p>
+Images that you do not save are not intentionally retained
+as permanent Personal Mode design-history records.
+</p>
+
+<h2>3. Professional Mode</h2>
+
+<p>
+Professional Mode provides account-based tools for
+managing properties, rooms, staging briefs, generated
+images, and image versions.
+</p>
+
+<p>
+Unlike Personal Mode, Professional Mode uses cloud
+infrastructure to support authenticated project
+management and AI processing.
+</p>
+
+<h3>3.1 Account information</h3>
+
+<p>
+Professional Mode uses Sign in with Apple.
+</p>
+
+<p>
+When you authenticate, we may receive an Apple-provided
+account identifier and, depending on the information
+you authorize Apple to share, your name or email address.
+</p>
+
+<p>
+If you use Apple's Hide My Email feature, Apple may
+provide a private relay email address.
+</p>
+
+<p>
+We use account information to authenticate you,
+associate Professional projects with your account,
+maintain Credit records, and provide account-related
+services.
+</p>
+
+<h3>3.2 Property and room information</h3>
+
+<p>
+Professional Mode may process and store information
+associated with your projects, including:
+</p>
+
+<ul>
+  <li>Property and room names.</li>
+  <li>Room categories and descriptions.</li>
+  <li>Staging briefs and design preferences.</li>
+  <li>Selected or uploaded room photographs.</li>
+  <li>Generated staging images.</li>
+  <li>Multi-Angle image groups.</li>
+  <li>Refinement requests and image-version history.</li>
+  <li>Project status and related metadata.</li>
+</ul>
+
+<p>
+This information is used to provide Professional
+features, maintain project continuity, and support
+the operations you request.
+</p>
+
+<h3>3.3 Cloud storage</h3>
+
+<p>
+Professional Mode may store uploaded photographs,
+generated images, and associated project information
+in cloud infrastructure.
+</p>
+
+<p>
+Cloud storage is different from the local-first
+storage used by Personal Mode.
+</p>
+
+<p>
+Stored content may remain associated with your
+Professional account until it is deleted under
+the applicable feature rules, account-deletion
+procedures, or retention policies.
+</p>
+
+<p>
+Temporary image files, project records, account
+information, and transaction records may have
+different retention periods.
+</p>
+
+<h2>4. Artificial intelligence processing</h2>
+
+<p>
+Home Lab AI uses Google's Gemini API to provide
+AI-powered interior design and virtual staging.
+</p>
+
+<p>
+When you request an AI operation, the photographs,
+instructions, and other information necessary to
+complete that operation may be transmitted from
+the app to our backend and then to Google's
+Gemini API.
+</p>
+
+<p>
+AI operations may include:
+</p>
+
+<ul>
+  <li>Room redesign and interior visualization.</li>
+  <li>Virtual furniture staging.</li>
+  <li>Multi-Angle image generation.</li>
+  <li>Image refinement.</li>
+  <li>Photo comparison and room-matching analysis.</li>
+</ul>
+
+<p>
+AI processing takes place through external services
+and is not performed entirely on your device.
+</p>
+
+<p>
+Google processes submitted content according to
+the terms and data-processing practices applicable
+to the Gemini API service used by Home Lab AI.
+</p>
+
+<p>
+AI-generated images may contain inaccuracies or
+visual inconsistencies and should not be treated
+as verified representations of physical spaces.
+</p>
+
+<h2>5. Analytics</h2>
+
+<p>
+Home Lab AI uses Amplitude to understand how
+the app is used and improve its functionality.
+</p>
+
+<p>
+Analytics may include information such as
+screen interactions, feature usage, and
+whether an AI generation was requested or completed.
+</p>
+
+<ul>
+  <li>We do not use advertising identifiers for targeted advertising.</li>
+  <li>We do not request App Tracking Transparency permission for advertising tracking.</li>
+  <li>We do not use Amplitude Session Replay or screen-recording analytics.</li>
+  <li>We do not intentionally include room photographs or AI-generated images in analytics events.</li>
+  <li>Personal Mode analytics use an anonymous installation-level identifier rather than your name or Apple ID.</li>
+</ul>
+
+<p>
+Technical information may be processed by analytics
+services according to their applicable service
+configuration and privacy practices.
+</p>
+
+<h2>6. Authentication and security</h2>
+
+<p>
+We use security measures designed to protect
+Home Lab AI and prevent unauthorized use.
+</p>
+
+<p>
+Depending on the feature, these measures may
+include Apple's App Attest and DeviceCheck,
+authenticated requests, request validation,
+and backend access controls.
+</p>
+
+<p>
+Security processing may involve:
+</p>
+
+<ul>
+  <li>Device-integrity verification results.</li>
+  <li>Authentication identifiers.</li>
+  <li>Request identifiers and timestamps.</li>
+  <li>Rate-limit and abuse-prevention counters.</li>
+  <li>Records needed to prevent repeated promotional Credit claims.</li>
+</ul>
+
+<p>
+Personal Mode may use salted or hashed identifiers
+for rate limiting and fair-use enforcement.
+</p>
+
+<p>
+Professional Mode may retain account-associated
+security and transaction records where necessary
+to protect the service and prevent fraud.
+</p>
+
+<p>
+These measures are intended to protect the service
+but cannot guarantee absolute security.
+</p>
+
+<h2>7. Purchases, subscriptions, and Credits</h2>
+
+<p>
+Purchases are processed through Apple's
+App Store and StoreKit.
+</p>
+
+<p>
+We do not receive your complete payment-card
+details from Apple.
+</p>
+
+<p>
+Personal Mode may offer subscriptions.
+Professional Mode may offer Credit packages
+used for eligible AI operations.
+</p>
+
+<p>
+To provide purchased features, we may process:
+</p>
+
+<ul>
+  <li>Apple transaction identifiers.</li>
+  <li>Purchased product identifiers.</li>
+  <li>Purchase and entitlement status.</li>
+  <li>Credit balances and transaction history.</li>
+  <li>Credit reservations, deductions, and refunds.</li>
+  <li>Records necessary to prevent duplicate transactions.</li>
+</ul>
+
+<p>
+These records may be retained as necessary for
+accounting, fraud prevention, purchase reconciliation,
+and applicable legal obligations.
+</p>
+
+<h2>8. Data retention</h2>
+
+<p>
+We retain information for as long as reasonably
+necessary to provide the requested features,
+maintain security, resolve technical or purchase
+issues, and comply with applicable legal obligations.
+</p>
+
+<h3>8.1 Personal Mode</h3>
+
+<p>
+Personal Mode design history is primarily stored
+on your device. Our backend does not maintain
+a permanent server-side backup of your Personal
+Mode room-photo library.
+</p>
+
+<h3>8.2 Professional Mode</h3>
+
+<p>
+Professional Mode may retain account information,
+project metadata, uploaded images, generated
+results, and image-version records in cloud storage.
+</p>
+
+<p>
+Certain temporary cloud-stored images may be
+subject to automatic retention and deletion
+periods, depending on the feature and account
+entitlement.
+</p>
+
+<p>
+Where a 30-day cloud-retention period applies,
+the relevant files may be removed after that
+period. This does not mean every category of
+account or transaction information is deleted
+after 30 days.
+</p>
+
+<p>
+Users should download important generated images
+they wish to retain independently of the app.
+</p>
+
+<h3>8.3 Security and transaction records</h3>
+
+<p>
+Security, purchase, and accounting records may
+be retained for different periods where reasonably
+necessary or legally required.
+</p>
+
+<p>
+We do not retain all categories of information
+indefinitely.
+</p>
+
+<h2>9. Account and data deletion</h2>
+
+<p>
+Professional users can request account deletion
+through the account-management features
+provided in the app.
+</p>
+
+<p>
+Account deletion initiates the applicable
+deletion or de-identification procedures for
+associated account and project information.
+</p>
+
+<p>
+Some information may be retained where required
+or permitted for legal compliance, accounting,
+fraud prevention, or security.
+</p>
+
+<p>
+Deleting the app from your device does not
+automatically delete an existing Professional
+account or cancel an App Store subscription.
+</p>
+
+<p>
+To request assistance with account deletion
+or personal information, contact
+<a href="mailto:info@eebconsultancyllc.com">info@eebconsultancyllc.com</a>.
+</p>
+
+<h2>10. Third-party services</h2>
+
+<p>
+Home Lab AI uses the following services,
+depending on the features you access:
+</p>
+
+<table>
+  <tr>
+    <th>Service</th>
+    <th>Purpose</th>
+  </tr>
+  <tr>
+    <td>Google Gemini API</td>
+    <td>AI image generation, image refinement, and room-photo analysis.</td>
+  </tr>
+  <tr>
+    <td>Cloudflare</td>
+    <td>Backend infrastructure, request processing, security, and Professional cloud storage.</td>
+  </tr>
+  <tr>
+    <td>Amplitude</td>
+    <td>Product analytics and feature-usage measurement.</td>
+  </tr>
+  <tr>
+    <td>Apple StoreKit</td>
+    <td>In-app purchases, subscriptions, and purchase verification.</td>
+  </tr>
+  <tr>
+    <td>Sign in with Apple</td>
+    <td>Professional account authentication.</td>
+  </tr>
+  <tr>
+    <td>Apple App Attest / DeviceCheck</td>
+    <td>App integrity verification and abuse prevention.</td>
+  </tr>
+</table>
+
+<p>
+These providers may process information under
+their respective service terms, privacy policies,
+and applicable data-processing arrangements.
+</p>
+
+<h2>11. What we do not do</h2>
+
+<ul>
+  <li>We do not sell your personal information.</li>
+  <li>We do not operate an advertising network within Home Lab AI.</li>
+  <li>We do not use room photographs for targeted advertising.</li>
+  <li>We do not require access to your entire photo library when you select individual images.</li>
+  <li>We do not provide a public social network or public user-content feed.</li>
+  <li>We do not collect complete payment-card details.</li>
+</ul>
+
+<h2>12. International data processing</h2>
+
+<p>
+Our infrastructure and service providers may
+process information in countries other than
+your country of residence.
+</p>
+
+<p>
+Where required, international processing and
+transfers are subject to applicable legal
+requirements and safeguards.
+</p>
+
+<h2>13. Your privacy rights</h2>
+
+<p>
+Depending on your location and applicable law,
+you may have rights to request access,
+correction, deletion, or a copy of certain
+personal information.
+</p>
+
+<p>
+You may also have rights to object to or
+restrict certain processing or withdraw
+consent where applicable.
+</p>
+
+<p>
+To exercise applicable rights, contact us
+using the email address below.
+</p>
+
+<p>
+We may request information necessary to
+verify your identity before responding.
+</p>
+
+<h2>14. Children's privacy</h2>
+
+<p>
+Home Lab AI is not directed to children
+under the age of 13.
+</p>
+
+<p>
+We do not knowingly collect personal
+information from children under 13.
+</p>
+
+<p>
+If we learn that such information has been
+collected without an appropriate legal basis,
+we will take steps to delete it.
+</p>
+
+<p>
+Additional age requirements may apply
+under local law.
+</p>
+
+<h2>15. Changes to this policy</h2>
+
+<p>
+We may update this Privacy Policy when
+our features, data-processing practices,
+service providers, or legal obligations change.
+</p>
+
+<p>
+When we make changes, we will update
+the "Last updated" date on this page.
+</p>
+
+<p>
+We will provide additional notice
+where required by applicable law.
+</p>
+
+<h2>16. Contact us</h2>
+
+<p>
+For privacy questions, account deletion
+requests, or other data-related inquiries:
+</p>
+
+<p>
+<strong>EEB CONSULTANCY LLC</strong><br>
+Email:
+<a href="mailto:info@eebconsultancyllc.com">info@eebconsultancyllc.com</a>
+</p>
+
+<p>
+See also our
+<a href="../support/">Support page</a>.
+</p>
+
+<footer>
+  &copy; 2026 EEB CONSULTANCY LLC
+</footer>
+
 </body>
 </html>
-
+```
