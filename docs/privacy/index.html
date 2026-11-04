@@ -1,4 +1,3 @@
-```html
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,16 +6,42 @@
 <title>Privacy Policy — Home Lab AI</title>
 <meta name="description" content="Privacy Policy for Home Lab AI by EEB Consultancy LLC, including Personal and Professional Mode.">
 <style>
-  :root { color-scheme: light dark; }
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 680px; margin: 0 auto; padding: 48px 24px 64px; line-height: 1.65; color: #1c1c1e; background: #faf7f2; }
+  :root { color-scheme: light; }
+  @media (prefers-color-scheme: dark) {
+    :root { color-scheme: dark; }
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 48px 24px 64px;
+    line-height: 1.65;
+    color: #1c1c1e;
+    background: #faf7f2;
+  }
   a { color: #b5622c; }
   h1 { font-size: 1.6rem; margin-bottom: 4px; }
   p.tagline { color: #6b6b6f; margin-top: 0; }
   p.updated { color: #6b6b6f; font-size: 0.9rem; }
-  h2 { font-size: 1.15rem; margin-top: 2.5rem; border-top: 1px solid #ece7de; padding-top: 1.5rem; }
+  h2 {
+    font-size: 1.15rem;
+    margin-top: 2.5rem;
+    border-top: 1px solid #ece7de;
+    padding-top: 1.5rem;
+  }
   h3 { font-size: 1rem; margin-top: 1.5rem; }
-  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.92rem; }
-  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #ece7de; vertical-align: top; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 0.92rem;
+  }
+  th, td {
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid #ece7de;
+    vertical-align: top;
+  }
   th { color: #6b6b6f; font-weight: 600; }
   ul { padding-left: 1.2rem; }
   footer { margin-top: 48px; color: #9a9a9e; font-size: 0.85rem; }
@@ -36,7 +61,7 @@
 
 <h1>Privacy Policy</h1>
 <p class="tagline">Home Lab AI, by EEB CONSULTANCY LLC</p>
-<p class="updated">Last updated: October 26, 2026</p>
+<p class="updated">Last updated: November 5, 2026</p>
 
 <p>
 This Privacy Policy explains how EEB CONSULTANCY LLC
@@ -80,7 +105,8 @@ prevent misuse.
 <p>
 When you select or capture a room photograph in Personal
 Mode, the app sends the image to our Cloudflare backend
-for processing through Google's Gemini API.
+for processing through Google's Gemini API, together with the style and room
+type you chose. The image is used only for that request.
 </p>
 
 <p>
@@ -123,9 +149,7 @@ Professional Mode provides account-based tools for
 managing properties, rooms, staging briefs, generated
 images, and image versions.
 </p>
-
-<p>
-Unlike Personal Mode, Professional Mode uses cloud
+  Unlike Personal Mode, Professional Mode uses cloud
 infrastructure to support authenticated project
 management and AI processing.
 </p>
@@ -137,14 +161,11 @@ Professional Mode uses Sign in with Apple.
 </p>
 
 <p>
-When you authenticate, we may receive an Apple-provided
-account identifier and, depending on the information
-you authorize Apple to share, your name or email address.
-</p>
-
-<p>
-If you use Apple's Hide My Email feature, Apple may
-provide a private relay email address.
+When you sign in, the app does not ask Apple for your name or email address.
+We receive an Apple-provided account identifier. We store it only as a keyed
+hash, together with an encrypted Apple sign-in token that lets us revoke the
+sign-in when you delete your account. We do not store your name or email
+address.
 </p>
 
 <p>
@@ -178,30 +199,29 @@ features, maintain project continuity, and support
 the operations you request.
 </p>
 
-<h3>3.3 Cloud storage</h3>
+<h3>3.3 Photos, generated images, and cloud storage</h3>
 
 <p>
-Professional Mode may store uploaded photographs,
-generated images, and associated project information
-in cloud infrastructure.
+In Professional Mode, your original room photographs stay on your device.
+Our server stores information about each photo (such as its size and a
+checksum) and the property and room information you enter.
 </p>
 
 <p>
-Cloud storage is different from the local-first
-storage used by Personal Mode.
+When you request an AI operation, the app uploads a copy of the photograph
+needed for that operation. Location and camera metadata (EXIF, including GPS)
+must be removed before upload; uploads that contain it are rejected. An
+uploaded copy is deleted when the operation finishes and in any case within
+24 hours.
 </p>
 
 <p>
-Stored content may remain associated with your
-Professional account until it is deleted under
-the applicable feature rules, account-deletion
-procedures, or retention policies.
-</p>
-
-<p>
-Temporary image files, project records, account
-information, and transaction records may have
-different retention periods.
+A generated image is kept in temporary cloud storage until your device
+downloads it, and then deleted. A generated image that is not downloaded is
+deleted after 14 days. Your design instructions are kept only while the
+operation is waiting or running. Records of completed operations (without
+images) are kept for up to 90 days for support, refunds, and billing
+reconciliation.
 </p>
 
 <h2>4. Artificial intelligence processing</h2>
@@ -237,9 +257,12 @@ and is not performed entirely on your device.
 </p>
 
 <p>
-Google processes submitted content according to
-the terms and data-processing practices applicable
-to the Gemini API service used by Home Lab AI.
+Home Lab AI uses the paid Gemini API service. Under Google's terms for paid
+services, Google does not use the photos, instructions, or generated images we
+send to improve its products, and processes them as our data processor. Google
+keeps prompts, contextual information, and responses for 55 days to detect
+and prevent abuse of its service, and may store them transiently or cache them
+in any country where Google or its agents have facilities.
 </p>
 
 <p>
@@ -251,28 +274,63 @@ as verified representations of physical spaces.
 <h2>5. Analytics</h2>
 
 <p>
-Home Lab AI uses Amplitude to understand how
-the app is used and improve its functionality.
+Analytics in Home Lab AI is optional and off unless you choose
+"Share Analytics". You are asked once, at the end of the first-run
+questions, and you can change this preference at any time in Settings
+(in Personal Mode and in Professional Mode).
 </p>
 
 <p>
-Analytics may include information such as
-screen interactions, feature usage, and
-whether an AI generation was requested or completed.
+Home Lab AI does not use a third-party analytics service. If you choose
+"Share Analytics", the app sends a small number of usage events to our own
+analytics service, which runs on Cloudflare. Each event contains only an
+event name and, for some events, one value from a fixed list:
 </p>
 
 <ul>
-  <li>We do not use advertising identifiers for targeted advertising.</li>
-  <li>We do not request App Tracking Transparency permission for advertising tracking.</li>
-  <li>We do not use Amplitude Session Replay or screen-recording analytics.</li>
-  <li>We do not intentionally include room photographs or AI-generated images in analytics events.</li>
-  <li>Personal Mode analytics use an anonymous installation-level identifier rather than your name or Apple ID.</li>
+  <li>App opened, with the workspace (Personal or Professional) that is open.</li>
+  <li>First-run questions completed (without your answers or the workspace chosen).</li>
+  <li>Photo selected, with the source (camera or photo library).</li>
+  <li>AI generation started (new or regenerated), succeeded, or failed (with a general failure category such as network or server).</li>
+  <li>Subscription screen viewed (with where it was opened from), purchase started or completed (with the plan: weekly or yearly), restore result, and share.</li>
 </ul>
 
 <p>
-Technical information may be processed by analytics
-services according to their applicable service
-configuration and privacy practices.
+Our analytics service adds each accepted event to a daily total and does not
+store the individual event. We do not store your IP address, a device or
+installation identifier, a user or account identifier, your name, your email
+address, or the time of the event (only the calendar day). Events from the
+same person are not linked to each other. Your IP address is processed
+briefly by Cloudflare to deliver the request and to apply rate limits, and is
+not written to our analytics database. To prevent abuse, our service counts
+requests per network for one minute using a one-way hash of the network part
+of your IP address; this count is kept only in memory and is not stored.
+</p>
+
+<p>
+Your answers to the first-run questions (your role, how many homes or
+properties you work with, and your main goal) are stored only on your device
+and are used to set up the app. They are never sent to us or to anyone else,
+including when you choose "Share Analytics". We also do not send information
+that would reveal them, such as which workspace the first-run questions led
+you to or the subscription screen shown right after them.
+</p>
+
+<ul>
+  <li>Nothing is collected before you choose "Share Analytics", and events from before that choice are not sent later.</li>
+  <li>To limit traffic, the app keeps on your device only a count of events sent today and, if our service asks it to pause, the time to resume. These are not identifiers and are never sent.</li>
+  <li>If you turn analytics off, collection stops immediately and requests still in progress are cancelled. An event that our service already received stays in the daily total, because it cannot be traced back to you.</li>
+  <li>Choices made in earlier versions of the app (which used a third-party analytics service) are not treated as consent. Analytics stays off until you choose again.</li>
+  <li>We do not use advertising identifiers and do not request App Tracking Transparency permission.</li>
+  <li>We do not use fingerprinting, session replay, or screen recording.</li>
+  <li>Analytics events never contain room photographs, AI-generated images, design instructions, style or room names, product identifiers, or purchase transaction details.</li>
+  <li>Professional Mode screens do not send additional usage events; with "Share Analytics" on, the app reports only which workspace is open when the app starts.</li>
+</ul>
+
+<p>
+Daily totals are kept for up to 400 days and then deleted automatically. Reports are
+available only to authorized staff, show totals rather than individual
+events, and hide small groups.
 </p>
 
 <h2>6. Authentication and security</h2>
@@ -302,8 +360,19 @@ Security processing may involve:
 </ul>
 
 <p>
-Personal Mode may use salted or hashed identifiers
-for rate limiting and fair-use enforcement.
+Personal Mode does not have accounts. To limit abuse, our Personal Mode
+backend checks a DeviceCheck token with Apple (the token is not stored) and
+counts requests per salted hash of your IP address. These counters expire
+automatically: rate-limit counters after about 10 minutes and fair-use
+counters after at most 30 days.
+</p>
+
+<p>
+To make sure the free Personal generation and the free Professional Welcome
+Credits are used only once per device, we use Apple's DeviceCheck service to
+set a per-device flag that Apple stores for us. The flag contains no personal
+information, is not linked to your account, and stays with the device even
+if you delete the app or your account.
 </p>
 
 <p>
@@ -333,6 +402,13 @@ details from Apple.
 Personal Mode may offer subscriptions.
 Professional Mode may offer Credit packages
 used for eligible AI operations.
+</p>
+
+<p>
+  Personal Mode subscription status is checked on your device through Apple's
+StoreKit. Our Personal Mode backend does not receive purchase information.
+For Professional Credits, our backend verifies Apple's signed transaction
+and keeps the records listed below with your Professional account.
 </p>
 
 <p>
@@ -366,46 +442,41 @@ issues, and comply with applicable legal obligations.
 <h3>8.1 Personal Mode</h3>
 
 <p>
-Personal Mode design history is primarily stored
-on your device. Our backend does not maintain
-a permanent server-side backup of your Personal
-Mode room-photo library.
+Personal Mode design history is stored on your device. Our backend does not
+keep your photos or generated images after the request is complete. Abuse
+counters expire as described in section 6. Our Personal Mode backend
+processes operational records used for security and troubleshooting,
+such as request outcomes. These records are not intended to contain
+photographs or generated images. Cloudflare may process technical
+request metadata, including IP addresses, in its infrastructure logs.
+Retention of provider-managed logs depends on the applicable Cloudflare
+configuration and service terms; you may contact us for further information.
 </p>
 
 <h3>8.2 Professional Mode</h3>
 
 <p>
-Professional Mode may retain account information,
-project metadata, uploaded images, generated
-results, and image-version records in cloud storage.
-</p>
-
-<p>
-Certain temporary cloud-stored images may be
-subject to automatic retention and deletion
-periods, depending on the feature and account
-entitlement.
-</p>
-
-<p>
-Where a 30-day cloud-retention period applies,
-the relevant files may be removed after that
-period. This does not mean every category of
-account or transaction information is deleted
-after 30 days.
-</p>
-
-<p>
-Users should download important generated images
-they wish to retain independently of the app.
+Professional Mode retains account information, property and room
+information, and photo information for as long as your account exists or
+until you delete them. Uploaded photo copies are deleted within 24 hours, and
+generated images are deleted when your device has downloaded them or after
+14 days. Records of completed AI operations (without images) are kept for up
+to 90 days. Download the generated images you want to keep; the app saves
+them on your device.
 </p>
 
 <h3>8.3 Security and transaction records</h3>
 
 <p>
-Security, purchase, and accounting records may
-be retained for different periods where reasonably
-necessary or legally required.
+Security, purchase, and accounting records are retained only while needed
+for service security, transaction reconciliation, dispute resolution, or
+applicable legal obligations. Where a fixed retention period is not stated,
+we review the continued need for the information and delete or de-identify it
+when that need ends, unless retention is required by law.
+</p>
+
+<p>
+Optional analytics totals are kept for up to 400 days.
 </p>
 
 <p>
@@ -428,9 +499,14 @@ associated account and project information.
 </p>
 
 <p>
-Some information may be retained where required
-or permitted for legal compliance, accounting,
-fraud prevention, or security.
+Account-associated projects and information are deleted or de-identified
+through the account-deletion process, except where limited records must be
+retained for accounting, transaction disputes, security, or legal compliance.
+Unused Credits attached to a deleted Professional account will no longer be
+available through that account. Before confirming deletion, the app warns
+about this consequence. Contact us before deletion if you have unused
+purchased Credits and need assistance; applicable statutory rights remain
+unaffected.
 </p>
 
 <p>
@@ -463,11 +539,7 @@ depending on the features you access:
   </tr>
   <tr>
     <td>Cloudflare</td>
-    <td>Backend infrastructure, request processing, security, and Professional cloud storage.</td>
-  </tr>
-  <tr>
-    <td>Amplitude</td>
-    <td>Product analytics and feature-usage measurement.</td>
+    <td>Backend infrastructure, request processing, security, Professional cloud storage, and our own optional analytics (daily totals only).</td>
   </tr>
   <tr>
     <td>Apple StoreKit</td>
@@ -509,12 +581,40 @@ your country of residence.
 </p>
 
 <p>
-Where required, international processing and
-transfers are subject to applicable legal
-requirements and safeguards.
+Requests to our backend are handled by Cloudflare's global network, usually
+in a data center near you. Our Personal Mode backend runs close to Google
+Cloud in the United States to reach the Gemini API. Our optional analytics
+totals are stored in a Cloudflare database located in the Asia-Pacific region.
+Photos and instructions sent for AI processing are processed by Google, which
+may store them transiently in any country where it has facilities.
+</p>
+
+<p>
+Where required by applicable law, we use appropriate contractual and
+organizational safeguards for transfers of personal information between
+countries. The applicable safeguards depend on the service provider,
+origin and destination of the transfer, and relevant law. Contact us
+if you need information about safeguards applicable to your data.
 </p>
 
 <h2>13. Your privacy rights</h2>
+
+<p>
+Where applicable privacy laws require a legal basis, we process information
+as necessary to provide the service you request and perform our contract
+(for example, image processing, Professional accounts, and purchases); on
+the basis of your consent for optional analytics, which you can withdraw in
+Settings; and, where permitted, for legitimate interests in service security,
+fraud prevention, abuse prevention, and operational reliability. Some records
+may also be processed to comply with legal obligations. You may contact us
+about the basis that applies to a particular activity.
+</p>
+
+<p>
+In the app you can turn analytics on or off at any time in Settings
+("Share Analytics", in Personal Mode and in Professional Mode), delete your
+saved designs, and, in Professional Mode, delete your account.
+</p>
 
 <p>
 Depending on your location and applicable law,
@@ -604,4 +704,5 @@ See also our
 
 </body>
 </html>
-```
+
+<p>
