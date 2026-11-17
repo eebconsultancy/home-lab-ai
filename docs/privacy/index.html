@@ -61,7 +61,7 @@
 
 <h1>Privacy Policy</h1>
 <p class="tagline">Home Lab AI, by EEB CONSULTANCY LLC</p>
-<p class="updated">Last updated: November 5, 2026</p>
+<p class="updated">Last updated: November 17, 2026</p>
 
 <p>
 This Privacy Policy explains how EEB CONSULTANCY LLC
@@ -149,6 +149,7 @@ Professional Mode provides account-based tools for
 managing properties, rooms, staging briefs, generated
 images, and image versions.
 </p>
+<p>
   Unlike Personal Mode, Professional Mode uses cloud
 infrastructure to support authenticated project
 management and AI processing.
@@ -188,7 +189,7 @@ associated with your projects, including:
   <li>Staging briefs and design preferences.</li>
   <li>Selected or uploaded room photographs.</li>
   <li>Generated staging images.</li>
-  <li>Multi-Angle image groups.</li>
+  <li>Room Understanding results (text descriptions of a room, without images).</li>
   <li>Refinement requests and image-version history.</li>
   <li>Project status and related metadata.</li>
 </ul>
@@ -213,6 +214,18 @@ needed for that operation. Location and camera metadata (EXIF, including GPS)
 must be removed before upload; uploads that contain it are rejected. An
 uploaded copy is deleted when the operation finishes and in any case within
 24 hours.
+</p>
+
+<p>
+Guided Capture helps you photograph a room from its corners. Before a
+generation, the app may upload copies of the room's photographs for Room
+Understanding, which describes the room's fixed architecture (such as walls,
+windows, and doors). These copies follow the same 24-hour deletion rule. The
+result is text only, without images. The latest description of each room is
+kept with that room until you delete the room or your account. Other Room
+Understanding results are kept for up to 90 days, and a text design plan for
+a selected photo may be kept for up to 7 days so that a repeated request does
+not need a new analysis.
 </p>
 
 <p>
@@ -246,9 +259,8 @@ AI operations may include:
 <ul>
   <li>Room redesign and interior visualization.</li>
   <li>Virtual furniture staging.</li>
-  <li>Multi-Angle image generation.</li>
   <li>Image refinement.</li>
-  <li>Photo comparison and room-matching analysis.</li>
+  <li>Room Understanding (analysis of a room's photographs to describe its fixed architecture).</li>
 </ul>
 
 <p>
@@ -364,7 +376,7 @@ Personal Mode does not have accounts. To limit abuse, our Personal Mode
 backend checks a DeviceCheck token with Apple (the token is not stored) and
 counts requests per salted hash of your IP address. These counters expire
 automatically: rate-limit counters after about 10 minutes and fair-use
-counters after at most 30 days.
+counters after about 30 days.
 </p>
 
 <p>
@@ -406,7 +418,17 @@ used for eligible AI operations.
 
 <p>
   Personal Mode subscription status is checked on your device through Apple's
-StoreKit. Our Personal Mode backend does not receive purchase information.
+StoreKit. When a Premium subscriber requests an AI design, the app also sends
+Apple's signed transaction information for that subscription to our Personal
+Mode backend. This information includes the transaction and original
+transaction identifiers, the product, and the expiration date. The backend
+verifies Apple's signature to confirm Premium access and to apply Premium
+usage limits. It keeps a usage counter linked to the subscription's original
+transaction identifier; the counter expires after about 30 days. If Apple
+tells us that a Personal subscription purchase was refunded or revoked, we
+keep a record of that transaction identifier until 30 days after the
+subscription period ends. Our Personal Mode backend does not receive your
+name, email address, or payment details.
 For Professional Credits, our backend verifies Apple's signed transaction
 and keeps the records listed below with your Professional account.
 </p>
@@ -444,7 +466,8 @@ issues, and comply with applicable legal obligations.
 <p>
 Personal Mode design history is stored on your device. Our backend does not
 keep your photos or generated images after the request is complete. Abuse
-counters expire as described in section 6. Our Personal Mode backend
+counters expire as described in section 6. Premium usage counters and refund
+records expire as described in section 7. Our Personal Mode backend
 processes operational records used for security and troubleshooting,
 such as request outcomes. These records are not intended to contain
 photographs or generated images. Cloudflare may process technical
@@ -461,7 +484,8 @@ information, and photo information for as long as your account exists or
 until you delete them. Uploaded photo copies are deleted within 24 hours, and
 generated images are deleted when your device has downloaded them or after
 14 days. Records of completed AI operations (without images) are kept for up
-to 90 days. Download the generated images you want to keep; the app saves
+to 90 days. Room Understanding results are kept as described in section 3.3.
+Download the generated images you want to keep; the app saves
 them on your device.
 </p>
 
@@ -487,9 +511,10 @@ indefinitely.
 <h2>9. Account and data deletion</h2>
 
 <p>
-Professional users can request account deletion
-through the account-management features
-provided in the app.
+Professional users can delete their account
+in the app: in Professional Mode, open
+Profile &gt; Account and tap
+Delete Professional Account.
 </p>
 
 <p>
